@@ -1,5 +1,5 @@
 import Food from '../../models/Food'
-import Product from '../Product'
+import ProductProfile from '../ProductProfile'
 import { Container, List } from './styles'
 
 export type Props = {
@@ -7,12 +7,12 @@ export type Props = {
   cardType: 'home' | 'profile'
 }
 
-const ProductsList = ({ foods }: Props) => (
-  <Container>
+const ProductListProfile = ({ foods, cardType }: Props) => (
+  <Container cardType={cardType}>
     <div className="container">
       <List>
         {foods.map((food) => (
-          <Product
+          <ProductProfile
             key={food.id}
             title={food.title}
             infos={food.infos}
@@ -27,4 +27,4 @@ const ProductsList = ({ foods }: Props) => (
   </Container>
 )
 
-export default ProductsList
+export default ProductListProfile

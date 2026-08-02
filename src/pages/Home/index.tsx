@@ -72,7 +72,7 @@ const maisVendidos: Food[] = [
 const Home = () => (
   <>
     <Banner />
-    <ProductsList foods={maisVendidos} />
+    <ProductsList foods={maisVendidos} cardType="home" />
   </>
 )
 

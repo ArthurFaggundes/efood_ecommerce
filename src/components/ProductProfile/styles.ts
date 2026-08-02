@@ -15,8 +15,6 @@ export const TitleRate = styled.div`
 `
 
 export const RateStat = styled.div`
-  display: flex;
-
   p {
     font-weight: bold;
     font-size: 18px;
@@ -48,7 +46,8 @@ export const Infos = styled.div`
 `
 
 export const ReadMoreDiv = styled.div`
-  background-color: ${colors.salmon};
+  background-color: ${colors.white};
   padding: 4px 6px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 `

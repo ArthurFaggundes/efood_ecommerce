@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import Tag from '../Tag'
+import { colors } from '../../styles'
 
 import {
   Card,
@@ -11,7 +12,6 @@ import {
   RateStat,
   ReadMoreDiv
 } from './styles'
-import { colors } from '../../styles'
 
 import star from '../../assets/star.svg'
 
@@ -24,7 +24,14 @@ type Props = {
   link: string
 }
 
-const Product = ({ title, rate, description, infos, image, link }: Props) => (
+const ProductProfile = ({
+  title,
+  rate,
+  description,
+  infos,
+  image,
+  link
+}: Props) => (
   <Card>
     <img src={image} />
     <Infos>
@@ -44,11 +51,14 @@ const Product = ({ title, rate, description, infos, image, link }: Props) => (
       </TitleRate>
       <Description>{description}</Description>
       <ReadMoreDiv>
-        <Link style={{ color: `${colors.white}` }} to={link}>
-          Saiba mais
+        <Link
+          style={{ color: `${colors.salmon}`, fontWeight: 'bold' }}
+          to={link}
+        >
+          Adicione ao carrinho
         </Link>
       </ReadMoreDiv>
     </div>
   </Card>
 )
-export default Product
+export default ProductProfile
