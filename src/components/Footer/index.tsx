@@ -1,4 +1,4 @@
-import { Container, Links, MediaButton } from './styles'
+import { Container } from './styles'
 
 import footerVector from '../../assets/footer.svg'
 // import instagramLogo from '../../assets/instagram_logo.svg'
