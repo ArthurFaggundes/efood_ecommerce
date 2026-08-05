@@ -24,7 +24,7 @@ type Props = {
   link: string
 }
 
-const Product = ({ title, rate, description, infos, image, link }: Props) => (
+const Product = ({ title, rate, description, infos, image }: Props) => (
   <Card>
     <img src={image} />
     <Infos>
@@ -44,7 +44,7 @@ const Product = ({ title, rate, description, infos, image, link }: Props) => (
       </TitleRate>
       <Description>{description}</Description>
       <ReadMoreDiv>
-        <Link style={{ color: `${colors.white}` }} to={link}>
+        <Link style={{ color: `${colors.white}` }} to="/categories">
           Saiba mais
         </Link>
       </ReadMoreDiv>
