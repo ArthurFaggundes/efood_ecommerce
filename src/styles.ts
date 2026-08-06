@@ -23,7 +23,6 @@ export const GlobalCss = createGlobalStyle`
   body {
     background-color: ${colors.salmon};
     color: ${colors.salmon};
-    padding-top: 40px;
   }
 
   .container {

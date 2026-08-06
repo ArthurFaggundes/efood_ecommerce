@@ -4,7 +4,7 @@ import { colors } from '../../styles'
 export const HeaderBar = styled.header`
   background-color: ${colors.white};
   padding: 24px;
-  margin-bottom: 40px;
+  margin: 40px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

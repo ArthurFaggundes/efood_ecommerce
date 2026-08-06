@@ -30,7 +30,7 @@ export const Hero = styled.div`
 export const Title = styled.h2`
   position: absolute;
   top: 200px;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 900;
   max-width: 450px;
   color: ${colors.white};

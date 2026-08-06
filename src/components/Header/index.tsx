@@ -17,7 +17,7 @@ const Header = () => (
       <nav>
         <Links>
           <LinkItem>
-            <Link to="/categories">
+            <Link to="/profile">
               <img src={smile} alt="Mais vendidos" />
               Mais Vendidos
             </Link>

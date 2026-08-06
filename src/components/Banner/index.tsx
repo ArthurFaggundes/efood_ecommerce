@@ -1,12 +1,16 @@
-import { Hero } from './styles'
-import { colors } from '../../styles'
+import { BrandTitle, HeroDiv } from './styles'
 
-import bannerVector from '../../assets/spoon_hero.svg'
+import logo from '../../assets/logo.svg'
 
 const Banner = () => (
-  <div style={{ backgroundColor: `${colors.cream}` }}>
-    <Hero style={{ backgroundImage: `url(${bannerVector})` }} />
-  </div>
+  <>
+    <HeroDiv>
+      <img src={logo} />
+      <BrandTitle>
+        Viva experiências gastronômicas no conforto da sua casa!
+      </BrandTitle>
+    </HeroDiv>
+  </>
 )
 
 export default Banner

@@ -44,7 +44,7 @@ const Product = ({ title, rate, description, infos, image }: Props) => (
       </TitleRate>
       <Description>{description}</Description>
       <ReadMoreDiv>
-        <Link style={{ color: `${colors.white}` }} to="/categories">
+        <Link style={{ color: `${colors.white}` }} to="/profile">
           Saiba mais
         </Link>
       </ReadMoreDiv>

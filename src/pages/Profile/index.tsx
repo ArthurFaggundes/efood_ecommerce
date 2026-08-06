@@ -4,6 +4,7 @@ import Food from '../../models/Food'
 // import trattoria from '../../assets/vita_trattoria.svg'
 import marguerita from '../../assets/pizza_marguerita.svg'
 import BannerFood from '../../components/BannerFood'
+import HeaderProfile from '../../components/HeaderProfile'
 
 const perfil: Food[] = [
   {
@@ -68,11 +69,12 @@ const perfil: Food[] = [
   }
 ]
 
-const Categories = () => (
+const Profile = () => (
   <>
+    <HeaderProfile />
     <BannerFood />
     <ProductListProfile foods={perfil} cardType="profile" />
   </>
 )
 
-export default Categories
+export default Profile
