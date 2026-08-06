@@ -5,7 +5,7 @@ import Food from '../../models/Food'
 //* import Comidas
 import sushi from '../../assets/hioki_sushi.svg'
 import trattoria from '../../assets/vita_trattoria.svg'
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 
 const maisVendidos: Food[] = [
   {
@@ -72,9 +72,9 @@ const maisVendidos: Food[] = [
 
 const Home = () => (
   <>
-    <div className="container">
+    {/* <div className="container">
       <Header />
-    </div>
+    </div> */}
     <Banner />
     <ProductsList foods={maisVendidos} cardType="home" />
   </>
