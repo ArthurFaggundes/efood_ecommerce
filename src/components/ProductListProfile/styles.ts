@@ -7,6 +7,7 @@ import { colors } from '../../styles'
 export const Container = styled.section`
   padding: 32px 0;
   background-color: ${colors.white};
+  padding-bottom: 120px;
 
   ${Card} {
     background-color: ${colors.salmon};

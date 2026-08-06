@@ -1,19 +1,33 @@
 import styled from 'styled-components'
+import { colors } from '../../styles'
 
-export const Container = styled.footer`
-  padding: 32px 0;
-  font-size: 14px;
-  height: 298px;
+export const FooterContainer = styled.footer`
   display: flex;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${colors.cream};
+  width: 100%;
+  text-align: center;
+
+  img {
+    margin-top: 32px;
+  }
 `
 
-export const Links = styled.ul`
+export const FooterUl = styled.ul`
   display: flex;
-  margin-top: 16px;
   justify-content: center;
+  gap: 8px;
+  margin-bottom: 80px;
+
+  img {
+    cursor: pointer;
+  }
 `
 
-export const MediaButton = styled.img`
-  margin-right: 8px;
+export const FooterInfo = styled.p`
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 100%;
+  margin-bottom: 40px;
 `
