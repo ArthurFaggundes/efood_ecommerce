@@ -8,13 +8,15 @@ type Props = {
   cover: string
 }
 
-const BannerFood = ({ name, category, cover }: Props) => (
-  <Hero style={{ backgroundImage: `url(${cover})` }}>
-    <div className="container">
-      <Tag size="big">{category}</Tag>
-      <Title>{name}</Title>
-    </div>
-  </Hero>
-)
+const BannerFood = ({ name, category, cover }: Props) => {
+  return (
+    <Hero style={{ backgroundImage: `url(${cover})` }}>
+      <div className="container">
+        <Tag size="big">{category}</Tag>
+        <Title>{name}</Title>
+      </div>
+    </Hero>
+  )
+}
 
 export default BannerFood

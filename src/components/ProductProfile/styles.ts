@@ -9,7 +9,7 @@ export const Card = styled.div`
   flex-direction: column;
   padding: 8px;
   background-color: ${colors.salmon};
-  color: ${colors.salmon};
+  color: ${colors.white};
 `
 
 export const ProductImage = styled.img`
@@ -32,7 +32,7 @@ export const Description = styled.p`
 `
 
 export const ButtonAdd = styled.button`
-  background-color: ${colors.salmon};
+  background-color: ${colors.white};
   color: ${colors.salmon};
   padding: 4px 0;
   border: none;
