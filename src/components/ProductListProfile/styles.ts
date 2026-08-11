@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Card, Infos, RateStat } from '../ProductProfile/styles'
+import { Card } from '../ProductProfile/styles'
 
 import { colors } from '../../styles'
 
@@ -13,13 +13,6 @@ export const Container = styled.section`
     background-color: ${colors.salmon};
     color: ${colors.white};
     padding: 6px;
-
-    ${Infos} {
-      display: none;
-    }
-    ${RateStat} {
-      display: none;
-    }
   }
 `
 

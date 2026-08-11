@@ -3,51 +3,41 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${colors.white};
-  position: relative;
-  border: 1px solid ${colors.salmon};
-`
-
-export const TitleRate = styled.div`
-  justify-content: space-between;
+  max-width: 320px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+  background-color: ${colors.salmon};
+  color: ${colors.salmon};
 `
 
-export const RateStat = styled.div`
-  p {
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 8px;
-  }
-
-  img {
-    height: 18px;
-  }
+export const ProductImage = styled.img`
+  width: 100%;
+  height: 167px;
+  padding-bottom: 8px;
+  display: block;
 `
 
 export const Title = styled.h3`
-  font-weight: bold;
-  font-size: 18px;
-  display: block;
+  font-weight: 900;
+  font-size: 16px;
+  margin-bottom: 8px;
 `
 
 export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
-  display: block;
-  margin: 16px 0;
+  margin-bottom: 8px;
 `
 
-export const Infos = styled.div`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-`
-
-export const ReadMoreDiv = styled.div`
-  background-color: ${colors.white};
-  padding: 4px 6px;
-  display: flex;
-  justify-content: center;
+export const ButtonAdd = styled.button`
+  background-color: ${colors.salmon};
+  color: ${colors.salmon};
+  padding: 4px 0;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
 `

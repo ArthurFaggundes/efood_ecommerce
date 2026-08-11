@@ -1,80 +1,37 @@
-import ProductListProfile from '../../components/ProductListProfile'
-import Food from '../../models/Food'
+import { useEffect, useState } from 'react'
+import { Restaurant } from '../../models/Restaurant'
 
-// import trattoria from '../../assets/vita_trattoria.svg'
-import marguerita from '../../assets/pizza_marguerita.svg'
+import ProductListProfile from '../../components/ProductListProfile'
+
 import BannerFood from '../../components/BannerFood'
 import HeaderProfile from '../../components/HeaderProfile'
+import { useParams } from 'react-router-dom'
 
-const perfil: Food[] = [
-  {
-    id: 1,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
-  },
-  {
-    id: 2,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
-  },
-  {
-    id: 3,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
-  },
-  {
-    id: 4,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
-  },
-  {
-    id: 5,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
-  },
-  {
-    id: 6,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    rate: '0.0',
-    infos: ['0'],
-    image: marguerita,
-    link: '/produtos/marguerita' //* exemplo de link usando Link do ReactRouterDOM
+const Profile = () => {
+  const { id } = useParams()
+  const [restaurant, setRestaurant] = useState<Restaurant | null>(null)
+
+  useEffect(() => {
+    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((data: Restaurant) => setRestaurant(data))
+  }, [id])
+
+  if (!restaurant) {
+    return <h3>Carregando...</h3>
   }
-]
 
-const Profile = () => (
-  <>
-    <HeaderProfile />
-    <BannerFood />
-    <ProductListProfile foods={perfil} cardType="profile" />
-  </>
-)
+  return (
+    <>
+      <HeaderProfile />
+      <BannerFood
+        name={restaurant.titulo}
+        category={restaurant.tipo}
+        cover={restaurant.capa}
+      />
+      <ProductListProfile foods={restaurant.cardapio} cardType="profile" />
+    </>
+  )
+}
 
 export default Profile

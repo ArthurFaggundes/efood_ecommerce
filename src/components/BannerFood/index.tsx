@@ -2,13 +2,17 @@ import { Hero, Title } from './styles'
 
 import Tag from '../Tag'
 
-import bannerTrattoria from '../../assets/vita_trattoria.svg'
+type Props = {
+  name: string
+  category: string
+  cover: string
+}
 
-const BannerFood = () => (
-  <Hero style={{ backgroundImage: `url(${bannerTrattoria})` }}>
+const BannerFood = ({ name, category, cover }: Props) => (
+  <Hero style={{ backgroundImage: `url(${cover})` }}>
     <div className="container">
-      <Tag size="big">Italiana</Tag>
-      <Title>La Dolce Vita Trattoria</Title>
+      <Tag size="big">{category}</Tag>
+      <Title>{name}</Title>
     </div>
   </Hero>
 )

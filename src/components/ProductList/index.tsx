@@ -1,25 +1,29 @@
-import Food from '../../models/Food'
-import Product from '../Product'
+import { Restaurant } from '../../models/Restaurant'
 import { Container, List } from './styles'
 
+import Product from '../Product'
+
 export type Props = {
-  foods: Food[]
+  restaurants: Restaurant[]
   cardType: 'home' | 'profile'
 }
 
-const ProductsList = ({ foods }: Props) => (
+const ProductsList = ({ restaurants }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {foods.map((food) => (
+        {restaurants.map((item) => (
           <Product
-            key={food.id}
-            title={food.title}
-            infos={food.infos}
-            image={food.image}
-            description={food.description}
-            rate={food.rate}
-            link={food.link}
+            key={item.id}
+            id={item.id}
+            title={item.titulo}
+            category={item.tipo}
+            rating={item.avaliacao}
+            description={item.descricao}
+            image={item.capa}
+            infos={
+              item.destacado ? ['Destaque da semana', item.tipo] : [item.tipo]
+            }
           />
         ))}
       </List>

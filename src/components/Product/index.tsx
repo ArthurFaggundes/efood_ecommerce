@@ -16,15 +16,16 @@ import { colors } from '../../styles'
 import star from '../../assets/star.svg'
 
 type Props = {
+  id: number
   title: string
-  rate: string
+  rating: number
+  category: string
+  image: string
   description: string
   infos: string[]
-  image: string
-  link: string
 }
 
-const Product = ({ title, rate, description, infos, image }: Props) => (
+const Product = ({ id, title, rating, image, description, infos }: Props) => (
   <Card>
     <img src={image} />
     <Infos>
@@ -38,13 +39,13 @@ const Product = ({ title, rate, description, infos, image }: Props) => (
       <TitleRate>
         <Title>{title}</Title>
         <RateStat>
-          <p>{rate}</p>
+          <p>{rating}</p>
           <img src={star} />
         </RateStat>
       </TitleRate>
       <Description>{description}</Description>
       <ReadMoreDiv>
-        <Link style={{ color: `${colors.white}` }} to="/profile">
+        <Link style={{ color: `${colors.white}` }} to={`/profile/${id}`}>
           Saiba mais
         </Link>
       </ReadMoreDiv>

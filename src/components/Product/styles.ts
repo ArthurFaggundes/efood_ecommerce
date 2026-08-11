@@ -6,6 +6,13 @@ export const Card = styled.div`
   background-color: ${colors.white};
   position: relative;
   border: 1px solid ${colors.salmon};
+
+  img {
+    width: 100%;
+    display: block;
+    height: 217px;
+    object-fit: cover;
+  }
 `
 
 export const TitleRate = styled.div`
@@ -24,7 +31,7 @@ export const RateStat = styled.div`
   }
 
   img {
-    height: 18px;
+    height: 20px;
   }
 `
 
