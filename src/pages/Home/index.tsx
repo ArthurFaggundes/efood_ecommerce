@@ -1,20 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Restaurant } from '../../models/Restaurant'
-
 import Banner from '../../components/Banner'
 import ProductsList from '../../components/ProductList'
 
+import { useGetRestaurantsQuery } from '../../services/api'
+
 const Home = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+  const { data: restaurants } = useGetRestaurantsQuery()
 
-  useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((data: Restaurant[]) => setRestaurants(data))
-  }, [])
-
-  if (restaurants.length === 0) {
-    return <h3>Ouve um erro, não há restaurantes cadastrados...</h3>
+  if (!restaurants) {
+    return <h3>Carregando restaurantes...</h3>
   }
 
   return (

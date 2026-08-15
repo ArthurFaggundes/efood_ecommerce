@@ -1,24 +1,33 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled, { css } from 'styled-components'
 import { colors } from '../../styles'
+import { Link } from 'react-router-dom'
 
-export const ButtonContainer = styled.button`
-  border: 2px solid ${colors.white};
-  color: ${colors.white};
-  background-color: transparent;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 8px;
+type Props = {
+  variant?: 'primary' | 'secondary'
+}
+
+const BaseStyles = css<Props>`
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+  background-color: ${(props) =>
+    props.variant === 'primary' ? colors.salmon : colors.cream};
+
+  color: ${(props) =>
+    props.variant === 'primary' ? colors.cream : colors.salmon};
+
+  border: 1px solid ${colors.salmon};
 `
 
-export const ButtonLink = styled(Link)`
-  border: 2px solid ${colors.white};
-  color: ${colors.white};
-  background-color: transparent;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 8px;
+export const ButtonContainer = styled.button<Props>`
+  ${BaseStyles}
+`
+
+export const ButtonLink = styled(Link)<Props>`
+  ${BaseStyles}
 `

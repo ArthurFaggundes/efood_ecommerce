@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Card } from '../ProductProfile/styles'
 
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.section`
   padding: 32px 0;
@@ -21,6 +21,14 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   margin-top: 40px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Title = styled.h2`

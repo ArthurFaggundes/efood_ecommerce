@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { colors } from '../../styles'
+import { colors, breakpoints } from '../../styles'
 import background from '../../assets/hero_background.svg'
 
 export const HeaderDiv = styled.header`
@@ -18,6 +18,16 @@ export const HeaderDiv = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 80%;
+    }
 
     img {
       height: 57px;

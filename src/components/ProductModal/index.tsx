@@ -1,8 +1,13 @@
-import closeIcon from '../../assets/close.png'
+import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
+
 import { FoodOption } from '../../models/Restaurant'
 import { priceFormat } from '../../utils/formatter'
+import { add, open } from '../../store/reducers/cart'
 
 import { ModalContainer, Modal, ModalButton, ModalContent } from './styles'
+
+import closeIcon from '../../assets/close.png'
 
 type Props = {
   product: FoodOption | null
@@ -11,10 +16,28 @@ type Props = {
 }
 
 const ProductModal = ({ product, isVisible, onClose }: Props) => {
+  const dispatch = useDispatch()
+
+  const addItem = () => {
+    if (product) {
+      dispatch(add(product))
+      onClose()
+
+      toast.success('Item adicionao! Ver carrinho', {
+        onClick: () => dispatch(open()),
+        icon: <span>🛒</span>,
+        position: 'bottom-right',
+        autoClose: 4000,
+        pauseOnHover: true,
+        draggable: true
+      })
+    }
+  }
+
   if (!isVisible || !product) return null
 
   return (
-    <Modal className="visivel">
+    <Modal className="visible">
       <div className="overlay" onClick={onClose}></div>
       <ModalContainer>
         <img onClick={onClose} src={closeIcon} alt="ícone de fechar" />
@@ -26,7 +49,7 @@ const ProductModal = ({ product, isVisible, onClose }: Props) => {
             <p>
               Serve de <span>{product.porcao}</span>
             </p>
-            <ModalButton>
+            <ModalButton onClick={addItem}>
               Adicionar ao carrinho - {priceFormat(product.preco)}
             </ModalButton>
           </div>

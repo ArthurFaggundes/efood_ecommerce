@@ -15,7 +15,6 @@ export const Hero = styled.div`
 
   .container {
     position: relative;
-    padding-top: 340px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end; // se alinha só ao último elemento ( para não ocupar toda a altura da div)

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const FooterContainer = styled.footer`
   display: flex;
@@ -11,6 +11,12 @@ export const FooterContainer = styled.footer`
 
   img {
     margin-top: 32px;
+  }
+
+  > div {
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 90%;
+    }
   }
 `
 
@@ -30,4 +36,9 @@ export const FooterInfo = styled.p`
   font-size: 10px;
   line-height: 100%;
   margin-bottom: 40px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-weight: 0;
+    font-size: 16px;
+  }
 `

@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { colors, breakpoints } from '../../styles'
 
 export const Modal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
   display: none;
 
-  &.visivel {
+  &.visible {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
   }
 
   .overlay {
@@ -28,7 +28,10 @@ export const Modal = styled.div`
 
 export const ModalContainer = styled.div`
   position: relative;
-  z-index: 3;
+  z-index: 1;
+  width: 90%;
+  max-width: 1024px;
+
   > img {
     width: 16px !important;
     height: 16px !important;
@@ -37,6 +40,10 @@ export const ModalContainer = styled.div`
     right: 8px;
     cursor: pointer;
     z-index: 3;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      display: none;
+    }
   }
 `
 
@@ -45,19 +52,39 @@ export const ModalContent = styled.div`
   padding: 32px;
   color: ${colors.white};
   display: flex;
-  width: 1024px;
+  //# width: 1024px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    flex-direction: column;
+    padding: 16px;
+    //! max-height: 80vh;
+    //! width: 90%;
+    overflow-y: auto;
+  }
 
   img {
     width: 280px;
     height: 280px;
     object-fit: cover;
     margin-right: 24px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+      height: 200px;
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
   }
 
   h4 {
     font-size: 18px;
     font-weight: 900;
     margin-bottom: 16px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+      padding: 12px;
+    }
   }
 
   p {

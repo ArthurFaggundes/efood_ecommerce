@@ -10,36 +10,37 @@ export type Props = {
   cardType: 'home' | 'profile'
 }
 
-const ProductListProfile = ({ foods, cardType }: Props) => {
+const ProductListProfile = ({ foods }: Props) => {
   const [modal, setModal] = useState({
     isVisible: false,
     data: null as FoodOption | null
   })
 
+  if (!foods) {
+    return <h3 className="container">Carregando...</h3>
+  }
+
   return (
-    <>
-      <Container cardType={cardType}>
-        <div className="container">
-          <List>
-            {foods.map((item) => (
-              <ProductProfile
-                key={item.id}
-                foto={item.foto}
-                nome={item.nome}
-                descricao={item.descricao.slice(0, 150) + '...'}
-                onOpen={() => setModal({ isVisible: true, data: item })}
-              />
-            ))}
-            {console.log(foods)}
-          </List>
-        </div>
+    <div className="container">
+      <Container>
+        <List>
+          {foods.map((item) => (
+            <ProductProfile
+              key={item.id}
+              foto={item.foto}
+              nome={item.nome}
+              descricao={item.descricao.slice(0, 150) + '...'}
+              onOpen={() => setModal({ isVisible: true, data: item })}
+            />
+          ))}
+        </List>
       </Container>
       <ProductModal
         product={modal.data}
         isVisible={modal.isVisible}
         onClose={() => setModal({ isVisible: false, data: null })}
       />
-    </>
+    </div>
   )
 }
 
