@@ -1,5 +1,5 @@
-import Banner from '../../components/Banner'
-import ProductsList from '../../components/ProductList'
+import Banner from '../../components/Home/RestaurantBanner'
+import ProductsList from '../../components/Home/RestaurantList'
 
 import { useGetRestaurantsQuery } from '../../services/api'
 

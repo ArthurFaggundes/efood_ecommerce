@@ -3,17 +3,17 @@ import { GlobalCss } from './styles'
 
 import { store } from './store'
 import { Provider } from 'react-redux'
-import Cart from './components/Cart'
+import Cart from './components/Any/Cart'
 
-import Routess from './routes'
-import Footer from './components/Footer'
+import RoutePaths from './routes'
+import Footer from './components/Any/Footer'
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <GlobalCss />
-        <Routess />
+        <RoutePaths />
         <Footer />
         <Cart />
       </BrowserRouter>
