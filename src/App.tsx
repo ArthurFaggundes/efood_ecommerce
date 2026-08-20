@@ -14,8 +14,8 @@ function App() {
       <BrowserRouter>
         <GlobalCss />
         <RoutePaths />
-        <Footer />
         <Cart />
+        <Footer />
       </BrowserRouter>
     </Provider>
   )

@@ -8,6 +8,8 @@ import coffee from '../../../assets/coffee.svg'
 import users from '../../../assets/users.svg'
 import cart from '../../../assets/shopping_bag.svg'
 
+//! ================================== ATUALMENTE NÃO UTILIZADO ================================== !//
+
 const Header = () => (
   <HeaderBar>
     <div>
@@ -42,5 +44,7 @@ const Header = () => (
     </LinkCart>
   </HeaderBar>
 )
+
+//! ================================== ATUALMENTE NÃO UTILIZADO ================================== !//
 
 export default Header

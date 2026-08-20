@@ -4,6 +4,8 @@ import { useGetPratosQuery } from '../../services/api'
 import ProductListProfile from '../../components/Food/ProductsList'
 import BannerFood from '../../components/Food/ProductsBanner'
 import HeaderProfile from '../../components/Food/ProductsHeader'
+import Cart from '../../components/Any/Cart'
+import Checkout from '../../components/Checkout'
 
 const Profile = () => {
   const { id } = useParams()
@@ -20,6 +22,8 @@ const Profile = () => {
         cover={restaurantItem.capa}
       />
       <ProductListProfile foods={restaurantItem.cardapio} cardType="profile" />
+      <Cart />
+      <Checkout />
     </>
   )
 }

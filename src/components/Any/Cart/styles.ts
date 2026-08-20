@@ -103,3 +103,10 @@ export const Price = styled.div`
   font-size: 16px;
   margin-top: 40px;
 `
+
+export const NoProductsMassage = styled.div`
+  color: ${colors.white};
+  font-size: 14px;
+  justify-content: center;
+  display: flex;
+`
